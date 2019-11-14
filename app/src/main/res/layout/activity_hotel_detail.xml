@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    tools:context=".HotelDetail">
+
+    <TextView
+        android:id="@+id/hotel_name_display"
+        android:paddingTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/hotel_area_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/hotel_name_display"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/hotel_star_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/hotel_area_display"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/hotel_num_room_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/hotel_star_display"
+        android:text="TextView" />
+    <RatingBar
+        android:id="@+id/rating_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:saveEnabled="true"
+        android:isIndicator="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/hotel_num_room_display"
+        android:numStars="5"/>
+</RelativeLayout>

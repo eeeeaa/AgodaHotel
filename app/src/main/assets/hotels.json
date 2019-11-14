@@ -1,0 +1,65 @@
+{
+  "hotels": [
+    {
+      "id": 1,
+      "hotelName": "Centara Grand at CentralWorld",
+      "area": "Siam",
+      "star": 1,
+      "numberOfRoom": 505
+    },
+    { "id": 2,
+      "hotelName": "Novotel Bangkok Ploenchit Sukhumvit",
+      "area": "Ploenchit",
+      "star": 1,
+      "numberOfRoom": 370
+    },
+    { "id": 3,
+      "hotelName": "The Tawana Bangkok",
+      "area": "Silom",
+      "star": 2,
+      "numberOfRoom": 254
+    },
+    { "id": 4,
+      "hotelName": "Centara Grand at CentralWorld",
+      "area": "Siam",
+      "star": 5,
+      "numberOfRoom": 122
+    },
+    { "id": 5,
+      "hotelName": "Dusit Thani Bangkok",
+      "area": "Silom",
+      "star": 5,
+      "numberOfRoom": 203
+    },
+    { "id": 6,
+      "hotelName": "Ambassador Hotel",
+      "area": "Sukhumvit",
+      "star": 2,
+      "numberOfRoom": 102
+    },
+    { "id": 7,
+      "hotelName": "Grand Centre Point Hotel",
+      "area": "Wireless",
+      "star": 3,
+      "numberOfRoom": 402
+    },
+    { "id": 8,
+      "hotelName": "Holiday Inn Bangkok",
+      "area": "Siam",
+      "star": 5,
+      "numberOfRoom": 125
+    },
+    { "id": 9,
+      "hotelName": "Baiyoke Sky Hotel",
+      "area": "Pratunam",
+      "star": 4,
+      "numberOfRoom": 200
+    },
+    { "id": 10,
+      "hotelName": "Arnoma Grand",
+      "area": "Siam",
+      "star": 3,
+      "numberOfRoom": 102
+    }
+  ]
+}
