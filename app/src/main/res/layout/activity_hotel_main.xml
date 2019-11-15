@@ -20,6 +20,9 @@
         android:layout_gravity="right"
         android:fitsSystemWindows="true"
         app:menu="@menu/activity_hotel_main_drawer"
+        app:itemTextColor="@color/textColor"
+        app:itemIconTint="@color/textColor"
+        android:theme="@style/NavigationView"
         />
 
 </android.support.v4.widget.DrawerLayout>

@@ -9,7 +9,10 @@
     <color name="buttonColor">#78909C</color>
     <color name="cardColor">#99ceff</color>
     <color name="transparent">#00000000</color>
+
     <color name="green">#19AC5B</color>
     <color name="red">#EE2225</color>
     <color name="blue">#347FC2</color>
+    <color name="purple">#814FA0</color>
+    <color name="backgroundColor_trans">#E6202060</color>
 </resources>

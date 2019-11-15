@@ -37,6 +37,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
         viewHolder.hotel_name.setText(hotelList.get(i).getHotel_name());
+        viewHolder.hotel_area.setText("Area: " + hotelList.get(i).getArea());
         viewHolder.hotel_card_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,11 +61,13 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView hotel_name;
+        TextView hotel_area;
         CardView hotel_card_view;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             hotel_name = itemView.findViewById(R.id.hotel_name);
+            hotel_area = itemView.findViewById(R.id.hotel_area);
             hotel_card_view = itemView.findViewById(R.id.hotel_card_view);
         }
     }

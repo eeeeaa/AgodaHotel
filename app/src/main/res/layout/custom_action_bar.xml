@@ -6,36 +6,19 @@
     android:gravity = "center_vertical"
     android:padding = "10dp"
     android:weightSum = "1">
+
     <LinearLayout
-        android:layout_width = "0dp"
-        android:layout_height = "match_parent"
-        android:layout_weight = "0.6">
-        <ImageView
-            android:layout_width = "wrap_content"
-            android:layout_height = "match_parent"
-            android:src = "@drawable/ic_logo"
-            android:tint="@color/green"/>
+        android:layout_width="393dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.6">
         <TextView
-            android:id = "@+id/title_name"
-            android:layout_width = "match_parent"
-            android:layout_height = "wrap_content"
-            android:layout_marginLeft = "10dp"
-            android:text = "Hotels"
-            android:textSize = "20sp"
-            android:textStyle = "bold"
-             />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width = "0dp"
-        android:layout_height = "match_parent"
-        android:layout_marginRight = "10dp"
-        android:layout_weight = "0.4"
-        android:gravity = "end">
-        <ImageView
-            android:id="@+id/sidebar_button"
-            android:layout_width = "wrap_content"
-            android:layout_height = "match_parent"
-            android:src = "@drawable/ic_sort_black_24dp"
-            android:tint="@color/blue"/>
+            android:id="@+id/title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:singleLine="true"
+            android:text="Hotels"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

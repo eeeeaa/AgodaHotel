@@ -10,15 +10,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.v7.widget.ContentFrameLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
-
-        </android.support.v7.widget.Toolbar>
-
+            android:layout_height="match_parent">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/backgroundColor_trans"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:layout_scrollFlags="scroll|enterAlways"/>
+            <ImageView
+                android:layout_width = "wrap_content"
+                android:layout_height = "match_parent"
+                android:src = "@drawable/ic_logo"
+                android:backgroundTint="@color/transparent"
+                android:paddingLeft="20dp"
+                android:tint="@color/green"/>
+            <TextView
+                android:id = "@+id/title_name"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_marginLeft = "10dp"
+                android:text = "Hotels"
+                android:backgroundTint="@color/transparent"
+                android:paddingTop="15dp"
+                android:paddingLeft="50dp"
+                android:textSize = "20sp"
+                android:textStyle = "bold"
+                />
+        </android.support.v7.widget.ContentFrameLayout>
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_hotel_main" />

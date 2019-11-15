@@ -1,7 +1,9 @@
 package com.example.agodahotel;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -21,6 +23,10 @@ public class HotelDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_detail);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         Bundle bundle = this.getIntent().getExtras();
         hotel_name_display = findViewById(R.id.hotel_name_display);
         hotel_area_display = findViewById(R.id.hotel_area_display);

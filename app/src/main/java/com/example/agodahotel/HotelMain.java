@@ -3,6 +3,7 @@ package com.example.agodahotel;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
+import android.widget.Spinner;
 
 import com.example.agodahotel.Model.Hotel;
 import com.example.agodahotel.Model.HotelAdapter;
@@ -27,11 +31,14 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class HotelMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ArrayList<Hotel> hotelList = new ArrayList<>();
+    private ArrayList<Hotel> hotelList_old;
+    private boolean isSort = false;
     public RecyclerView hotel_list_view;
 
     @Override
@@ -63,6 +70,21 @@ public class HotelMain extends AppCompatActivity
                 }
             }
         });
+
+        // sorting switch
+        MenuItem switchItem = navigationView.getMenu().findItem(R.id.nav_sort_switch);
+        CompoundButton switchView = (CompoundButton) MenuItemCompat.getActionView(switchItem);
+        switchView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    //sort alphabetically
+            }
+        });
+
+        MenuItem mspin= navigationView.getMenu().findItem(R.id.nav_filter_rating);
+        Spinner spinner = (Spinner) MenuItemCompat.getActionView(mspin);
+        Integer[] items = new Integer[]{1,2,3,4,5};
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this,android.R.layout.simple_spinner_item, items);
+        spinner.setAdapter(adapter);
 
         ///////////////////////////////////////////////////////
         hotel_list_view = findViewById(R.id.hotel_list_view);

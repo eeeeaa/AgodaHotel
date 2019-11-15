@@ -4,47 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize"
+    android:theme="@style/AppTheme.NoActionBar"
     tools:context=".HotelDetail">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dist_header"
+        android:background="@drawable/detail_gredient">
 
-    <TextView
-        android:id="@+id/hotel_name_display"
-        android:paddingTop="20dp"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/hotel_name_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="#07000000"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="16dp"
+            android:textStyle="bold"
+            android:text="textView"
+            android:textSize="25dp"
+            android:layout_marginTop="120dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+    </FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="TextView" />
+        android:layout_below="@id/dist_header"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:id="@+id/hotel_area_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="TextView" />
 
-    <TextView
-        android:id="@+id/hotel_area_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/hotel_name_display"
-        android:text="TextView" />
+        <TextView
+            android:id="@+id/hotel_star_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/hotel_area_display"
+            android:text="TextView" />
 
-    <TextView
-        android:id="@+id/hotel_star_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/hotel_area_display"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/hotel_num_room_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/hotel_star_display"
-        android:text="TextView" />
-    <RatingBar
-        android:id="@+id/rating_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:saveEnabled="true"
-        android:isIndicator="true"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/hotel_num_room_display"
-        android:numStars="5"/>
+        <TextView
+            android:id="@+id/hotel_num_room_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/hotel_star_display"
+            android:text="TextView" />
+        <RatingBar
+            android:id="@+id/rating_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:saveEnabled="true"
+            android:isIndicator="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/hotel_num_room_display"
+            android:numStars="5"/>
+    </RelativeLayout>
 </RelativeLayout>
