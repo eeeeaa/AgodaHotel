@@ -49,9 +49,9 @@ public class HotelDetail extends AppCompatActivity {
         }
 
         hotel_name_display.setText(current_data.getHotel_name());
-        hotel_area_display.setText(current_data.getArea());
-        hotel_star_display.setText(current_data.getStar() + "");
-        hotel_num_room_display.setText(current_data.getNumber_of_room() + "");
+        hotel_area_display.setText("Area: " + current_data.getArea());
+        hotel_star_display.setText("Stars: " + current_data.getStar() + "");
+        hotel_num_room_display.setText("Number of rooms: " + current_data.getNumber_of_room() + "");
         rating_display.setRating(current_data.getStar());
     }
 }

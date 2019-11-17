@@ -19,7 +19,6 @@
             android:layout_centerHorizontal="true"
             android:background="#07000000"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:paddingLeft="16dp"
             android:textStyle="bold"
             android:text="textView"
             android:textSize="25dp"

@@ -1,11 +1,20 @@
 package com.example.agodahotel.Model;
 
-public class Hotel {
+public class Hotel implements Comparable<Hotel> {
     private int id;
     private String hotel_name;
     private String area;
     private int star;
     private int number_of_room;
+
+    @Override
+    public int compareTo(Hotel hotel) {
+        //sort by name
+        if (getHotel_name() == null || hotel.getHotel_name() == null) {
+            return 0;
+        }
+        return getHotel_name().compareTo(hotel.getHotel_name());
+    }
 
     public Hotel(int id, String hotel_name, String area, int star, int number_of_room) {
         this.id = id;
