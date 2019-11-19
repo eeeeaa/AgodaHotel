@@ -42,4 +42,7 @@
                 app:actionLayout="@layout/nav_checkbox" />
         </menu>
     </item>
+    <item
+        android:title=""
+        app:actionLayout="@layout/nav_textview" />
 </menu>
