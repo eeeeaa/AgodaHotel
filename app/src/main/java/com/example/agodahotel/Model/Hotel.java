@@ -1,5 +1,7 @@
 package com.example.agodahotel.Model;
 
+import android.support.annotation.NonNull;
+
 public class Hotel implements Comparable<Hotel> {
     private int id;
     private String hotel_name;
@@ -29,6 +31,12 @@ public class Hotel implements Comparable<Hotel> {
         this.area = "N/A";
         this.star = 0;
         this.number_of_room = 0;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "ID: " + id + " Hotel: " + hotel_name + " Area: " + area + " Stars: " + star + " NumberOfRooms: " + number_of_room;
     }
 
     public int getId() {

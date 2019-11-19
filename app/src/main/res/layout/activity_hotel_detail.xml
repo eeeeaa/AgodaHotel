@@ -11,6 +11,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/dist_header"
         android:background="@drawable/detail_gredient">
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:background="@color/transparent"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:tint="@color/backgroundColor_trans"/>
 
         <TextView
             android:id="@+id/hotel_name_display"
@@ -61,5 +70,6 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/hotel_num_room_display"
             android:numStars="5"/>
+
     </RelativeLayout>
 </RelativeLayout>

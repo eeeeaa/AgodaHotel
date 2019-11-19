@@ -44,6 +44,7 @@ public class HotelMain extends AppCompatActivity {
     private ArrayList<Hotel> hotelList = new ArrayList<>();//list to populates the recycler view
     private ArrayList<Hotel> hotelList_origin = new ArrayList<>();//original list to store all data from JSON
     public RecyclerView hotel_list_view;
+    private CompoundButton switchView;
     private static String TAG = "HOTEL_MAIN";
     RecyclerView.Adapter hotelAdapter;
 
@@ -87,11 +88,11 @@ public class HotelMain extends AppCompatActivity {
         MenuItem star_five = navigationView.getMenu().findItem(R.id.filter_star_five);
 
         /**sorting switch**/
-        CompoundButton switchView = (CompoundButton) switchItem.getActionView();
+        switchView = (CompoundButton) switchItem.getActionView();
         switchView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     //sort alphabetically
-                if (isChecked == true){
+                if (isChecked){
                     Collections.sort(hotelList);
                     hotelAdapter.notifyDataSetChanged();
                 }else {
@@ -115,7 +116,7 @@ public class HotelMain extends AppCompatActivity {
         });
 
         /**filter star rating**/
-        final ArrayList<Integer> conditons = new ArrayList<>();//arraylist that store conditon values for filtering
+        final ArrayList<Integer> conditons = new ArrayList<>();//arraylist that store condition values for filtering
         CompoundButton filter_one = (CompoundButton) star_one.getActionView();
         CompoundButton filter_two = (CompoundButton) star_two.getActionView();
         CompoundButton filter_three = (CompoundButton) star_three.getActionView();
@@ -273,6 +274,25 @@ public class HotelMain extends AppCompatActivity {
             //clear tha main list,then add the filtered list
             hotelList.clear();
             hotelList.addAll(clone_list(filtered_list));
+            if (switchView != null){
+                if (switchView.isChecked()){
+                    Collections.sort(hotelList);
+                }else {
+                    //sort by ID
+                    Collections.sort(hotelList, new Comparator<Hotel>() {
+                                @Override
+                                public int compare(Hotel o1, Hotel o2) {
+                                    //compare ID,Descending
+                                    if (o2.getId() > o1.getId()){
+                                        return -1;
+                                    }else{
+                                        return  1;
+                                    }
+                                }
+                            }
+                    );
+                }
+            }
             hotelAdapter.notifyDataSetChanged();
         }
     }

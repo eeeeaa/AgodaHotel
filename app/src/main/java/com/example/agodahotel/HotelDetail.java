@@ -1,9 +1,11 @@
 package com.example.agodahotel;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -18,6 +20,7 @@ public class HotelDetail extends AppCompatActivity {
     TextView hotel_star_display;
     TextView hotel_num_room_display;
     RatingBar rating_display;
+    ImageView back_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,13 @@ public class HotelDetail extends AppCompatActivity {
         hotel_star_display = findViewById(R.id.hotel_star_display);
         hotel_num_room_display = findViewById(R.id.hotel_num_room_display);
         rating_display = findViewById(R.id.rating_display);
+        back_button = findViewById(R.id.back_button);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         if(bundle !=null)
         {
             current_data = new Hotel(
