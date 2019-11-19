@@ -43,6 +43,8 @@ import static android.support.test.espresso.intent.matcher.IntentMatchers.hasCom
 import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
 import static android.support.test.espresso.matcher.ViewMatchers.isChecked;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
@@ -78,6 +80,33 @@ public class HotelMainTest {
         onView(withId(R.id.hotel_list_view))
                 .inRoot(withDecorView(Matchers.is(activityRule.getActivity().getWindow().getDecorView())))
                 .perform(RecyclerViewActions.scrollToPosition(item_count-1));
+
+    }
+    @Test
+    public void HotelDetailPageCheck(){
+        RecyclerView recyclerView = activityRule.getActivity().findViewById(R.id.hotel_list_view);
+        HotelAdapter hotelAdapter = (HotelAdapter) recyclerView.getAdapter();
+        //item at position 1
+        Hotel hotel = hotelAdapter.getHotelList().get(0);
+        onView(withId(R.id.hotel_list_view))
+                .inRoot(withDecorView(Matchers.is(activityRule.getActivity().getWindow().getDecorView())))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0,click()));
+        onView(withId(R.id.hotel_name_display)).check(matches(withText(hotel.getHotel_name())));
+        onView(withId(R.id.hotel_area_display)).check(matches(withText("Area: " + hotel.getArea())));
+        onView(withId(R.id.hotel_star_display)).check(matches(withText("Stars: " + hotel.getStar())));
+        onView(withId(R.id.hotel_num_room_display)).check(matches(withText("Number of rooms: "+ hotel.getNumber_of_room())));
+
+        onView(withId(R.id.back_button)).perform(click());
+
+        //item at position 5
+        Hotel hotel_2 = hotelAdapter.getHotelList().get(5);
+        onView(withId(R.id.hotel_list_view))
+                .inRoot(withDecorView(Matchers.is(activityRule.getActivity().getWindow().getDecorView())))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(5,click()));
+        onView(withId(R.id.hotel_name_display)).check(matches(withText(hotel_2.getHotel_name())));
+        onView(withId(R.id.hotel_area_display)).check(matches(withText("Area: " + hotel_2.getArea())));
+        onView(withId(R.id.hotel_star_display)).check(matches(withText("Stars: " + hotel_2.getStar())));
+        onView(withId(R.id.hotel_num_room_display)).check(matches(withText("Number of rooms: "+ hotel_2.getNumber_of_room())));
 
     }
     @Test
